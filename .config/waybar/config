@@ -1,0 +1,55 @@
+{
+	"layer":"top",
+	"position": "top",
+	"height": 34,
+	"spacing": 6,
+	"margin-top": 6,
+	"margin-left": 10,
+	"margin-right": 10,
+
+	"modules-left": ["hyprland/workspaces"],
+	"modules-center": ["clock"],
+	"modules-right": ["pulseaudio", "backlight", "network", "battery", "tray"],
+
+	"hyprland/workspace": {
+		"format": "{name}",
+		"on-click": "activate"
+	},
+	
+	"clock": {
+		"format": "{:%H:%M}",
+		"format-alt": "{:%A, %d de %B}",
+		"tooltip-format": "<tt>{calendar}</tt>"
+	},
+
+	"pulseaudio": {
+		"format": "{icon}  {volume}%",
+		"format-muted": "󰝟  mudo",
+		"format-icons": {"default":["󰕿", "󰖀", "󰕾"]},
+	},
+
+	"backlight": {
+		"format": "󰃠  {percent}%",
+		"on-scroll-up": "brightnessctl set 5%+",
+		"on-scroll-down": "brightnessctl set 5%-"
+	},
+
+	"network": {
+		"format-wifi": "󰖩  {essid}",
+		"format-ethernet": "󰈀  conectado",
+        	"format-disconnected": "󰖪  offline",
+        	"tooltip-format": "{ifname}: {ipaddr}",
+        	"on-click": "nm-connection-editor" 
+	},
+
+	"battery": {
+        	"states": {"warning": 30, "critical": 15},
+		"format": "{icon}  {capacity}%",
+        	"format-charging": "󰂄  {capacity}%",
+        	"format-icons": ["󰁺", "󰁽", "󰂀", "󰂂", "󰁹"]
+    	},
+
+	"tray": {
+        	"spacing": 10
+	}
+}
